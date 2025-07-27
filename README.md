@@ -1,9 +1,8 @@
 # 🧙‍♀️ Hogwarts Acceptance Letter – n8n AI Agent
 
-This no-code AI agent creates a fully personalized Hogwarts acceptance letter based on a short quiz. Built in [n8n](https://n8n.io), it uses OpenAI’s GPT-4 to generate a warm, magical letter that’s then automatically delivered via email.
+>🏳️‍⚧️🏳️‍🌈 **Acknowledgement:** This project uses fictional themes inspired by the Harry Potter universe as part of a technical exercise during an AI Agent Bootcamp. I do not support J.K. Rowling’s views, particularly those harmful to trans and queer communities. This project was created purely for educational purposes to practice AI prompt engineering and workflow design.
 
->🏳️‍⚧️ Acknowledgement: While this project uses language inspired by the Harry Potter universe, I do not support the views of J.K. Rowling. 
->This build was created for technical learning purposes as part of an AI Bootcamp.
+This no-code AI agent creates a fully personalized Hogwarts acceptance letter based on a short quiz. Built in [n8n](https://n8n.io), it uses OpenAI’s GPT-4 to generate a warm, magical letter that’s then automatically delivered via email.
 
 ## 💡 Project Goal
 
