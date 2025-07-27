@@ -1,0 +1,100 @@
+{
+  "name": "AI Agent Bootcamp: Week 1 - Hogwarts Acceptance Letter",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "REDACTED_FOR_GITHUB",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "id": "webhook-node-id-placeholder",
+      "name": "Webhook",
+      "webhookId": "REDACTED_FOR_GITHUB"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "messages": {
+          "values": [
+            {
+              "role": "system",
+              "content": "Role:\nYou are the very prim and proper Deputy Headmistress of Hogwarts School of Witchcraft and Wizardry, writing an official acceptance letter to a new student. You are verbose and include many adjectives when you write with hilarious results. You like to paint a very exacting and specifically detailed description of things.\n\nTask:\nCompose a whimsical, heartfelt, in-world Hogwarts acceptance letter. It should feel immersive and magical, as if written by a caring, poetic wizarding educator.\n\nInput:\n\t•\tStudent name: {{ $json.name }}\n\t•\tFavorite magical subject: {{ $json.subject }}\n\t•\tPatronus: {{ $json.patronus }}\n\t•\tPreferred vibe: {{ $json.vibe.toLowerCase() }}\n\nOutput:\nReturn only the body of the letter.\nNo greetings like “Dear [Name],” and no signature or closing sign-off.\nUse paragraph formatting (via \\n\\n) to indicate breaks in the letter.\n\nConstraints:\n\t•\tStay completely in-world (Hogwarts tone and setting only).\n\t•\tDo not include any signature sign-off, signatory name, or sender details.\n\t•\tAvoid modern terms, meta references, or breaking the fourth wall.\n\t•\tDon’t add any extra commentary, setup, or explanation.\n\nReminders:\n\t•\tHighlight the student’s Patronus and subject with pride and curiosity.\n\t•\tEmphasize the magical journey awaiting them at Hogwarts.\n\t•\tMaintain a dreamy, moonlit, and enchanted tone — especially if the vibe is “night.”"
+            },
+            {
+              "role": "user",
+              "content": "=Write a Hogwarts acceptance letter to a student named {{ $json.name }}. Their favorite magical subject is {{ $json.subject }}, their Patronus is a {{ $json.patronus }}, and they prefer {{ $json.vibe.toLowerCase() }}.\n\nMake it sound whimsical, heartfelt, and in-world — as if sent from the Deputy Headmistress herself.\n\nRespond with *only* the letter text — no extra commentary, explanations, or formatting.\n\nDo not include a signature sign off for the letter."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [448, 0],
+      "id": "a89befdf-80a2-4b89-aaab-aa7679e0b932",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "REDACTED_FOR_GITHUB",
+          "name": "REDACTED_FOR_GITHUB"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const answers = $json.body.form_response.answers;\n\nreturn [\n  {\n    json: {\n      name: answers[0]?.text,\n      subject: answers[1]?.choice?.label,\n      patronus: answers[2]?.text,\n      vibe: answers[3]?.choice?.label\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [240, 0],
+      "id": "2a94b8c2-3364-4b2e-a47a-bd7fc4ae482e",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "sendTo": "REDACTED_FOR_GITHUB",
+        "subject": "=Your Hogwarts Letter, {{ $('Code').item.json.name }}",
+        "message": "=<div style=\"font-family: Georgia, serif; font-size: 16px; line-height: 1.6; color: #2d2d2d; max-width: 600px; margin: 0 auto; padding: 20px; background: #fffbe7; border: 1px solid #d6c589; border-radius: 8px;\">\n  <h1 style=\"text-align: center; color: #5c4033;\">Your Hogwarts Acceptance Letter</h1>\n  <div style=\"margin: 16px 0;\">\n    {{ $json.message.content.replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>') }}\n  </div>\n  <p style=\"margin-top: 2em;\">Warmest regards,<br>\n  <strong>Professor Matilda Goodberry</strong><br>\n  Deputy Headmistress<br>\n  <em>Hogwarts School of Witchcraft and Wizardry</em></p>\n</div>"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [800, 0],
+      "id": "5cb77e25-e14f-42b1-a3c8-998f58798373",
+      "name": "Send a message",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REDACTED_FOR_GITHUB",
+          "name": "REDACTED_FOR_GITHUB"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [[{ "node": "Code", "type": "main", "index": 0 }]]
+    },
+    "Code": {
+      "main": [[{ "node": "Message a model", "type": "main", "index": 0 }]]
+    },
+    "Message a model": {
+      "main": [[{ "node": "Send a message", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "versionId": "REDACTED_FOR_GITHUB",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "REDACTED_FOR_GITHUB"
+  },
+  "id": "REDACTED_FOR_GITHUB",
+  "tags": []
+}
