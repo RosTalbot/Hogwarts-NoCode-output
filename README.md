@@ -50,14 +50,14 @@ The GPT prompt was rewritten using best practices from the Bootcamp — separati
 - Return only the letter body
 - Emphasize tone: poetic, in-world, moonlit, and immersive
 
-Prompt: [`hogwarts_letter_prompt.md`](hogwarts_letter_prompt.md)
+Prompt: [`hogwarts_acceptance_letter_prompt.md`](hogwarts_acceptance_letter_prompt.md)
 
 
 
 ## 📂 Files Included
 
-- `hogwarts_acceptance_letter_workflow.json` – full working n8n build  
-- `hogwarts_letter_prompt.md` – GPT prompt used for formatting and tone  
+- `Hogwarts-nocode-output-workflow.json` – full working n8n build  
+- `hogwarts_acceptance_letter_prompt.md` – GPT prompt used for formatting and tone  
 - `screenshots/` – visual previews of the form, JSON output, and final email layout  
 - `README.md` – you’re reading it!
 > 🔒 **Note:** The workflow JSON has been sanitized for public sharing.  
