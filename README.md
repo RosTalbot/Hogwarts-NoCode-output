@@ -80,3 +80,6 @@ All visuals are included in the `screenshots/` folder to show the flow from form
 
 
 🦉 Special thanks again to Kaouthar for the original concept.
+
+_This project is not affiliated with or endorsed by J.K. Rowling, Warner Bros., or the official Harry Potter franchise. “Hogwarts” is used here solely as part of an educational demonstration._
+
