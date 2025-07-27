@@ -60,8 +60,9 @@ Prompt: [`hogwarts_letter_prompt.md`](hogwarts_letter_prompt.md)
 - `hogwarts_letter_prompt.md` – GPT prompt used for formatting and tone  
 - `screenshots/` – visual previews of the form, JSON output, and final email layout  
 - `README.md` – you’re reading it!
-
-
+> 🔒 **Note:** The workflow JSON has been sanitized for public sharing.  
+> Personal emails, credential IDs, and webhook URLs have been replaced with placeholder text.  
+> Please update these with your own values before use.
 
 ## 🖼️ Sample Screenshots
 
