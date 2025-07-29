@@ -37,8 +37,12 @@ I used n8n’s Gmail node with custom HTML injection to:
 	•	Improve paragraph spacing and readability
 	•	Add a stylized signature block (for Professor Goodberry, of course!) A stylized closing signature block (for Professor Goodberry, of course!)
 
-- Rebuilt the front-end form with custom HTML/CSS and hosted it on Vercel for a smoother user experience
-- Styled the email output to match the updated visual aesthetic (warm lighting, parchment vibe, soft borders)
+## ✨ Visual Glow-Up
+
+After the initial launch, the project received a full aesthetic makeover:
+- 🌒 Dark-mode-inspired form hosted via Vercel
+- 💌 Email upgraded with magical styling and signature
+- 📸 Screenshots reflect the latest design updates
 
 
 ## 🧰 Tools Used
