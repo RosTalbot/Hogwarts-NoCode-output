@@ -4,6 +4,10 @@
 
 This no-code AI agent creates a fully personalized Hogwarts acceptance letter based on a short quiz. Built in [n8n](https://n8n.io), it uses OpenAI’s GPT-4 to generate a warm, magical letter that’s then automatically delivered via email.
 
+🧪 **Live Demo**: [https://www.rostalbot.com/hogwarts-tam-test-form.html](https://www.rostalbot.com/hogwarts-tam-test-form.html)
+
+_For demo purposes only. May be taken offline after August 15._
+
 ## 💡 Project Goal
 
 Build an AI agent that:
@@ -18,20 +22,23 @@ Build an AI agent that:
 This project was inspired by guidance from Kaouthar (Lonely Octopus AI Agent Bootcamp). Her original instructions helped shape the early version of this workflow. I followed her outline closely but made a few key changes for functionality and formatting for my specific agent.
 
 
-
 ## 🧪 Changes From Original
 
 Kaouthar’s version used a basic HTML output directly inside the OpenAI prompt and displayed the letter in a browser via Replit. 
 
-When I tried this setup:
-- I couldn’t get Replit to run reliably on my machine
-- I was struggling with output formatting bugs (extra line breaks, HTML tag issues)
+When I tested Kaouthar’s setup:
+-  Replit wasn’t running reliably on my machine
+-  I ran into formatting bugs (extra line breaks, HTML tag issues)
 
-So I pivoted to email delivery - which made more sense since this is a Hogwarts **letter**.
-I used Gmail’s Send Email node inside n8n with custom HTML injection for:
-- A more immersive email layout
-- Better paragraph spacing
-- A stylized closing signature block (for Professor Goodberry, of course!)
+So I pivoted to email delivery, (which made more sense anyway since this is a Hogwarts letter).
+
+I used n8n’s Gmail node with custom HTML injection to:
+	•	Create a more immersive, magical email layout
+	•	Improve paragraph spacing and readability
+	•	Add a stylized signature block (for Professor Goodberry, of course!) A stylized closing signature block (for Professor Goodberry, of course!)
+
+- Rebuilt the front-end form with custom HTML/CSS and hosted it on Vercel for a smoother user experience
+- Styled the email output to match the updated visual aesthetic (warm lighting, parchment vibe, soft borders)
 
 
 ## 🧰 Tools Used
@@ -67,16 +74,25 @@ Prompt: [`hogwarts_acceptance_letter_prompt.md`](hogwarts_acceptance_letter_prom
 
 ## 🖼️ Sample Screenshots
 
-All visuals are included in the `screenshots/` folder to show the flow from form → JSON → final email.
-
-
+Updated visuals (form design + email layout) are now included in the `screenshots/` folder.
+This shows the full journey:
+1. Quiz form (styled & hosted on Vercel)
+2. JSON output from GPT
+3. Final Hogwarts-style email
 
 ## 🔮 Future Plans
 
-- Swap Typeform trigger for native n8n form to avoid submission limits  
-- Add option for mobile-friendly HTML styling  
-- Consider embedding this as a downloadable letter via PDF
+- ✅ Swap Typeform trigger for native n8n form to avoid submission limits  
+- ✅ Add option for mobile-friendly HTML styling  
+- 📝 Consider embedding this as a downloadable letter via PDF
 
+
+
+## 🔖 Tags / Topics
+
+`no-code` `ai` `agentic-ai` `n8n-workflow` `chatgpt`  
+`prompt-engineering` `workflow-automation` `vercel-deployment`  
+`html-css` `openai-api`
 
 
 🦉 Special thanks again to Kaouthar for the original concept.
